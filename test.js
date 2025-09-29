@@ -6,11 +6,13 @@ const sumInputsEqualZero = (nums) => {
             throw new Error('provide number');
         }
 
-        sum += num;
+        sum += Math.round(num * 100); // keep in mind that ita money and usually we have 2 digits after comma
     }
-    const sumWithTwoDigitsAfterComma = sum.toFixed(2);  // lol, made a tiny hack :)
 
-    return +sumWithTwoDigitsAfterComma === 0;
+    // const sumWithTwoDigitsAfterComma = sum.toFixed(2);  // lol, made a tiny hack :)
+    // return +sumWithTwoDigitsAfterComma === 0;
+
+    return sum === 0;
 };
 
 const nums = [1, 2, 3]; // false
